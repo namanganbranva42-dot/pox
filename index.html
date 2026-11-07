@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkShop - Online Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a href="#home" class="logo">DARK<span>SHOP.</span></a>
+
+    <nav>
+        <a href="#home">Bosh sahifa</a>
+        <a href="#products">Mahsulotlar</a>
+        <a href="#deals">Aksiyalar</a>
+        <a href="#contact">Aloqa</a>
+    </nav>
+
+    <div class="header-right">
+        <button onclick="openModal('signup')">Sign In</button>
+        <button onclick="openModal('login')">Log In</button>
+        <button class="cart-btn" onclick="openCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <span class="blue-text">DARKSHOP ONLINE STORE</span>
+        <h1>Texnologiya bilan<br><span>kelajak sari!</span></h1>
+        <p>Eng yangi smartfonlar, kompyuterlar va aksessuarlar.
+           Hammasi bir joyda, hammasi siz uchun!</p>
+        <a href="#products" class="main-btn">Xarid qilish <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="hero-stats">
+            <div><h2>25+</h2><p>Mahsulot</p></div>
+            <div><h2>100%</h2><p>Sifat</p></div>
+            <div><h2>24/7</h2><p>Xizmat</p></div>
+        </div>
+    </div>
+
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900" alt="Electronics">
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div><i class="fa-solid fa-truck-fast"></i><h3>Tez yetkazish</h3><p>Tezkor va ishonchli xizmat</p></div>
+    <div><i class="fa-solid fa-shield-halved"></i><h3>Sifat kafolati</h3><p>Original mahsulotlar</p></div>
+    <div><i class="fa-solid fa-headset"></i><h3>24/7 yordam</h3><p>Mijozlarga xizmat</p></div>
+    <div><i class="fa-solid fa-credit-card"></i><h3>Qulay to'lov</h3><p>Qulay to'lov imkoniyatlari</p></div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+    <div class="section-title">
+        <span class="blue-text">BIZNING BO'LIMLAR</span>
+        <h2>Kategoriyalar</h2>
+    </div>
+
+    <div class="categories">
+        <button class="category active" data-cat="all">Barchasi</button>
+        <button class="category" data-cat="Telefon">Telefonlar</button>
+        <button class="category" data-cat="Laptop">Laptoplar</button>
+        <button class="category" data-cat="Aksessuar">Aksessuarlar</button>
+        <button class="category" data-cat="Soat">Smart soatlar</button>
+        <button class="category" data-cat="Gaming">Gaming</button>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+    <div class="section-title">
+        <span class="blue-text">ENG YAXSHI TANLOV</span>
+        <h2>Barcha mahsulotlar</h2>
+        <p>O'zingizga kerakli mahsulotni tanlang</p>
+    </div>
+
+    <div class="product-tools">
+        <input type="search" id="search" placeholder="Mahsulot qidirish...">
+        <select id="sort">
+            <option value="default">Saralash</option>
+            <option value="low">Arzonidan</option>
+            <option value="high">Qimmatidan</option>
+        </select>
+    </div>
+
+    <div class="products" id="productList"></div>
+</section>
+
+<!-- DEALS -->
+<section class="section deals" id="deals">
+    <div class="section-title">
+        <span class="blue-text">MAXSUS TAKLIFLAR</span>
+        <h2>Hafta aksiyalari</h2>
+        <p>Chegirmadagi mahsulotlarni qo'ldan boy bermang!</p>
+    </div>
+
+    <div class="deal-banner">
+        <div>
+            <span>SUPER CHEGIRMA</span>
+            <h2>50% gacha chegirmalar!</h2>
+            <p>Sevimli texnikalaringizni arzon narxlarda xarid qiling.</p>
+            <a href="#products" class="main-btn">Aksiyalarni ko'rish</a>
+        </div>
+        <i class="fa-solid fa-tags"></i>
+    </div>
+
+    <div class="deal-cards" id="dealCards"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+    <div class="section-title">
+        <span class="blue-text">BIZ HAQIMIZDA</span>
+        <h2>DarkShop haqida</h2>
+    </div>
+
+    <div class="about-content">
+        <div>
+            <h2>Sizning ishonchli texnika do'koningiz!</h2>
+            <p>DarkShop — zamonaviy texnologiyalar va elektronika mahsulotlarini taklif qiluvchi online do'kon.</p>
+            <p>Bizning maqsadimiz mijozlarga sifatli mahsulotlar, qulay narxlar va a'lo darajadagi xizmat ko'rsatishdir.</p>
+        </div>
+        <div class="about-numbers">
+            <div><h2>5000+</h2><p>Mamnun mijozlar</p></div>
+            <div><h2>25+</h2><p>Mahsulot turlari</p></div>
+            <div><h2>3 yil</h2><p>Tajriba</p></div>
+            <div><h2>100%</h2><p>Ishonch</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+    <div class="section-title">
+        <span class="blue-text">BIZ BILAN BOG'LANING</span>
+        <h2>Aloqa</h2>
+        <p>Savolingiz bormi? Bizga yozing!</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-info">
+            <div><i class="fa-solid fa-phone"></i><span><b>Telefon</b><p>+998 90 123 45 67</p></span></div>
+            <div><i class="fa-solid fa-envelope"></i><span><b>Email</b><p>info@darkshop.uz</p></span></div>
+            <div><i class="fa-solid fa-location-dot"></i><span><b>Manzil</b><p>Toshkent, O'zbekiston</p></span></div>
+            <div><i class="fa-solid fa-clock"></i><span><b>Ish vaqti</b><p>Har kuni 09:00 - 21:00</p></span></div>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+            <input type="text" placeholder="Ismingiz" required>
+            <input type="email" placeholder="Email manzilingiz" required>
+            <input type="text" placeholder="Mavzu" required>
+            <textarea placeholder="Xabaringiz..." required></textarea>
+            <button type="submit">Xabar yuborish</button>
+        </form>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h2>Yangiliklardan xabardor bo'ling!</h2>
+    <p>Chegirmalar va yangi mahsulotlar haqida birinchilardan bo'lib biling.</p>
+    <form id="newsletterForm">
+        <input type="email" placeholder="Email manzilingiz" required>
+        <button type="submit">Obuna bo'lish</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid">
+        <div>
+            <a href="#home" class="logo">DARK<span>SHOP.</span></a>
+            <p>Texnologiya olamidagi ishonchli do'koningiz.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h3>Tezkor havolalar</h3>
+            <a href="#home">Bosh sahifa</a>
+            <a href="#products">Mahsulotlar</a>
+            <a href="#deals">Aksiyalar</a>
+            <a href="#about">Biz haqimizda</a>
+        </div>
+
+        <div>
+            <h3>Mijozlar uchun</h3>
+            <a href="#contact">Aloqa</a>
+            <a href="#contact">Yordam markazi</a>
+            <a href="#contact">Yetkazib berish</a>
+            <a href="#contact">To'lov usullari</a>
+        </div>
+
+        <div>
+            <h3>Biz bilan aloqa</h3>
+            <p>+998 90 123 45 67</p>
+            <p>info@darkshop.uz</p>
+            <p>Toshkent, O'zbekiston</p>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 DarkShop. Barcha huquqlar himoyalangan.</div>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal" id="cartModal">
+    <div class="modal-box">
+        <button class="close" onclick="closeModal('cartModal')">×</button>
+        <h2>Savatcha</h2>
+        <div id="cartItems"></div>
+        <h3 id="total">Jami: $0</h3>
+        <button class="submit-btn" onclick="checkout()">Buyurtma berish</button>
+    </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="detailModal">
+    <div class="modal-box">
+        <button class="close" onclick="closeModal('detailModal')">×</button>
+        <div id="detailContent"></div>
+    </div>
+</div>
+
+<!-- SIGNUP / LOGIN MODAL -->
+<div class="modal" id="authModal">
+    <div class="modal-box auth-box">
+        <button class="close" onclick="closeModal('authModal')">×</button>
+        <div id="authContent"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
